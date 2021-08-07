@@ -1,0 +1,17 @@
+Write a script that evaluates and displays the following arithmetic operations:
+
+Add two numbers
+Add two numbers and multiply by a third, do not group anything 
+Add two numbers, grouped (changing order of precedence) and multiply by a third
+
+Keep in mind special characters and/or escape characters as needed.
+
+-> num1=10
+num2=2
+
+sum=$(($num1 + $num2))
+echo "sum of two numbers is : $sum"
+#
+#num3=4
+#mul=$((10+2\*4))
+#echo "mul of third numbers is : $mul"
