@@ -86,7 +86,7 @@ Assignments:-
 -> 5.8.0-1035-gcp
 
 25.display teh machine type of the current kernel
--> 
+-> Linux
 
 26.Display the name of the operating system that the kernel is running on
 -> Linux
@@ -176,7 +176,7 @@ Under the Command label, select Run command as a login shell.
 -> Shell configuration files are executed automatically when you log in and. out of a shell. They initialize and configure a shell upon login and. perform cleanup operations upon logout.
 
 44.Explain the Order of file usage from the system/user's home directory when user logs in to the System.
--> 
+-> The user first logs in to the system and is in current directory where he/she last present. Then if we run the command cd\ we can access the root directory and can easily navigate through the files and folders by using ls command. Like this by using cd\, cd.., cd/ we can navigate through complete system
 
 45.What are Shell Variables, list major shell variables and what do they represent?
 -> A variable is a character string to which we assign a value. The value assigned could be a number, text, filename, device, or any other type of data. $0, $n, $#, $*
@@ -265,7 +265,7 @@ declare -x LESS_TERMCAP_se=""
 output obtained is 0
 
 59.List all entries that name length more than 5 characters
--> 
+-> Null
 
 60.What is Quoting? and Why do we need it?
 -> Quoting is used to remove the special meaning of certain characters or words to the shell.
