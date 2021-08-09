@@ -16,5 +16,9 @@ echo "$date"
 echo "Enter the detile of files"
 read list
 echo "$list"
+
+OR we can write
+USERFILES="${HOME}*.txt" for creating Userfile
 #
 alias [name[=value]]
+alias UFILES=""
