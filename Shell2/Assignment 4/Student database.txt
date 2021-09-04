@@ -1,0 +1,59 @@
+echo "Enter name of database :"
+read db
+i="yes"
+
+ 
+
+echo ">>>>>>>>>WELCOME TO THE $db DATA BASE<<<<<<<<<<<<<<"
+while [ "$i" == "yes" ]
+do
+
+ 
+
+echo "1.View the $db  database"
+echo "2.View Specific Records of $db database"
+echo "3.Add Records in $db database "
+echo "4.Delete Records from $db database"
+echo "5.Exit "
+echo "Enter your choice "
+read choice
+
+ 
+
+    case $choice in 
+        1) cat $db ;;
+        
+        2)echo "Enter roll no of that student: " 
+          read rn
+          grep -i "$rn" $db;;
+        3)echo "Enter roll no: "
+          read rn
+          echo "Enter name: "
+          read name
+          echo "Enter Semester: "
+          read sem
+          echo "Marks in English"
+          read eng
+          echo "Marks in History"
+          read hist
+          echo "Marks in Geography"
+          read geo
+          echo " $rn     $name    $sem    $eng    $hist    $geo" >>$db;;
+        4)echo "Enter roll no of student whose records to be deleted:  "
+           read rn
+           grep -v "$rn" $db 
+           cat db;;
+        5)exit;;
+          *)echo "Invalid choice";;
+           
+    esac
+
+ 
+
+echo "Do u want to continue ?"
+read i
+if [ "$i" != "yes" ]
+then
+    exit
+fi
+done  

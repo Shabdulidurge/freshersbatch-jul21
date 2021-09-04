@@ -1,0 +1,69 @@
+
+# Online Bash Shell.
+# Code, Compile, Run and Debug Bash script online.
+# Write your code in this editor and press "Run" button to execute it.
+echo "Enter name of database :"
+read db
+i="yes"
+
+ 
+
+echo ">>>>>>>>>WELCOME TO THE $db DATA BASE<<<<<<<<<<<<<<"
+while [ "$i" == "yes" ]
+do
+
+ 
+
+echo "1.View the $db database"
+echo "2.View Specific Records of $db database"
+echo "3.Add Records in $db database "
+echo "4.Delete Records from $db database"
+echo "5.Exit "
+echo "Enter your choice "
+read choice
+
+ 
+
+case $choice in
+1) #cat $db ;;
+echo "sid name clg SSC HSC "
+cat $db ;;
+
+2)echo "Enter roll no of that student: "
+read sid
+grep -i "$rn" $db;;
+3)echo "Enter student id: "
+read sid
+echo "Enter name: "
+read name
+echo "Enter clg name : "
+read clg
+echo "Marks in SSC"
+read ssc
+echo "Marks in HSC"
+read hsc
+
+echo " $sid $name $clg $ssc $hsc" >>$db;;
+4)echo "Enter roll no of student whose records to be deleted: "
+read sid
+echo "rn name clg ssc hsc "
+grep -v "$sid" $db
+cat db;;
+5)exit;;
+*)echo "Invalid choice";;
+
+esac
+
+ 
+
+echo "Do u want to continue ?"
+read i
+if [ "$i" != "yes" ]
+then
+exit
+fi
+done
+
+
+
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+echo " Enter name of a directory"
+read Dir
+for Directory in $( ls $HOME )
+do
+  test -d $HOME/$dir
+  if [ $# -eq 0 ]
+  then
+    for filename in $( ls $HOME/$Dir )
+    do
+      test -d $HOME/$dir/$filename
+      if [ ! -s "$filename"  ]
+      then
+        rm $HOME/$dir/$filename
+      else
+        echo " not empty"
+      fi
+    done
+  else
+    echo " $Dir is not a directory"
+  fi
+done

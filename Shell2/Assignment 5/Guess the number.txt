@@ -1,0 +1,21 @@
+#! /bin/bash
+system_no=$RANDOM
+for ((i=1;i<=6;i++))
+do
+
+ 
+
+read -p "This is your chance number  $i ,Guess my number: " user_no
+if [ $user_no -eq $system_no ]
+then
+echo "Your guess is correct"
+else
+echo "Your guess is wrong"
+if [ $user_no -gt $system_no ]
+then
+        echo "Entered number is too biggg"
+else
+        echo "Entered number is too small"
+fi
+fi
+done

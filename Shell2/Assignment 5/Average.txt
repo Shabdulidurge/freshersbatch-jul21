@@ -1,0 +1,37 @@
+
+    
+echo "Enter the Subject name:"
+read Unix VB PHP
+echo "Enter the marks of three subjects : "
+read m1 m2 m3 
+let total=$m1+$m2+$m3
+let avg=(total/5)
+echo student total marks:$total
+echo Student average :$avg
+if [ $avg -ge 70 ]
+then
+echo gread :"Distinction"
+elif [ $avg -ge 60 -a $avg -lt 70 ]
+then
+echo Gread :"First Class"
+    
+elif [ $avg -ge 50 -a $avg -lt 60 ]
+then
+echo Gread :"Second Class"
+elif [ $avg -ge 50 -a $avg -lt 50 ]
+then
+echo Gread :"Third Class"
+
+
+echo "Gread :F(fail) "
+fi
+ 
+
+
+
+
+    
+
+
+
+

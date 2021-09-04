@@ -1,0 +1,3 @@
+echo "enter the basic salary:"
+read basal
+grosal=$( echo "$basal+((34/100)*$basal)+((24/100)*$basal)-((11/100)*$basal)" | bc -l)
