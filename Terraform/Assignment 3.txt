@@ -1,0 +1,70 @@
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "2.15.0"
+    }
+  }
+}
+provider "docker" {
+  host = "npipe:////.//pipe//docker_engine"
+}
+
+# Download the latest Ghost Image
+resource "docker_image" "image_id" {
+  name = var.image_name[var.env]
+}
+
+# Start the Container
+resource "docker_container" "container_id" {
+  name  = var.container_name[var.env]
+  image = docker_image.image_id.latest
+  ports {
+    internal = 2368
+    external = var.ext_port[var.env]
+  }
+}
+
+
+variables.tf 
+variable "env" {
+  description = "env: dev or prod"
+}
+
+variable "image_name" {
+  description = "Image for container."
+  type = map
+  default = {
+    dev = "ghost:latest"
+    prod = "ghost:alpine"
+  }
+}
+
+variable "container_name" {
+  description = "Name of the container."
+  type = map
+  default = {
+    dev = "blog_dev"
+    prod = "blog_prod"
+  }
+}
+
+variable "ext_port" {
+  description = "External port for container."
+  type = map
+  default = {
+    dev = 8080
+    prod = 80
+  }
+}
+
+outputs.tf
+output "ip_address" {
+  value       = docker_container.container_id.ip_address
+  description = "The IP for the container."
+}
+
+output "container_name" {
+  value       = docker_container.container_id.name
+  description = "The name of the container."
+}

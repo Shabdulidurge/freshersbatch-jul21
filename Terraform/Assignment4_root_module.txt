@@ -1,0 +1,28 @@
+module "ghost" {
+source = "C:\Users\Shabduli\project_dir\Terraform\Assignment4_root_module.txt"
+image_name = "${var.image_name}" 
+container_name = "${var.container_name}" 
+ext_port = "${var.ext_port}"
+}
+
+variables
+variable "image_name" { 
+   
+    default = "ghost:latest" 
+} 
+variable "container_name" { 
+
+    default = "blog" 
+} 
+variable "ext_port" { 
+    
+     default = "9090" 
+}
+
+outputs
+output "ip" { 
+    value = "${module.ghost.ip}" 
+} 
+output "container_name" { 
+    value = "${module.ghost.container_name}" 
+}
